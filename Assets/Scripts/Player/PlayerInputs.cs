@@ -5,45 +5,49 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
-    public Vector2 Move;
-    public bool Jump;
-    public bool Sprint;
+    private Vector2 _move;
+    private bool _jump;
+    private bool _sprint;
 
     public bool analogMovement;
 
     public bool cursorLocked = true;
 
+    public bool IsJumping() => _jump;
+    public bool IsSprinting() => _sprint;
+    public Vector2 GetMove() => _move;
+
 #if ENABLE_INPUT_SYSTEM
-    public void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext value)
     {
-        MoveInput(value.Get<Vector2>());
+        MoveInput(value.ReadValue<Vector2>());
     }
 
-    public void OnJump(InputValue value)
+    public void OnJump(InputAction.CallbackContext value)
     {
-        JumpInput(value.isPressed);
+        JumpInput(value.action.triggered);
     }
 
-    public void OnSprint(InputValue value)
+    public void OnSprint(InputAction.CallbackContext value)
     {
-        SprintInput(value.isPressed);
+        SprintInput(value.action.ReadValue<float>() == 1);
     }
 #endif
 
 
     public void MoveInput(Vector2 newMoveDirection)
     {
-        Move = newMoveDirection;
+        _move = newMoveDirection;
     }
 
     public void JumpInput(bool newJumpState)
     {
-        Jump = newJumpState;
+        _jump = newJumpState;
     }
 
     public void SprintInput(bool newSprintState)
     {
-        Sprint = newSprintState;
+        _sprint = newSprintState;
     }
 
     private void OnApplicationFocus(bool hasFocus)

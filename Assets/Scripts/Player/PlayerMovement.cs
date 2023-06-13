@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.Windows;
 
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(PlayerInputs))]
 public class PlayerMovement : MonoBehaviour
 {
     public float MoveSpeed = 3.0f;
@@ -60,13 +62,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float targetSpeed = _playerInputs.Sprint ? SprintSpeed : MoveSpeed;
+        float targetSpeed = _playerInputs.IsSprinting() ? SprintSpeed : MoveSpeed;
 
-        if (_playerInputs.Move == Vector2.zero) targetSpeed = 0.0f;
+        if (_playerInputs.GetMove() == Vector2.zero) targetSpeed = 0.0f;
         float currentHorizontalSpeed = new Vector3(_characterController.velocity.x, 0.0f, _characterController.velocity.z).magnitude;
 
         float speedOffset = 0.1f;
-        float inputMagnitude = _playerInputs.analogMovement ? _playerInputs.Move.magnitude : 1f;
+        float inputMagnitude = _playerInputs.analogMovement ? _playerInputs.GetMove().magnitude : 1f;
 
         if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
         {
@@ -77,11 +79,11 @@ public class PlayerMovement : MonoBehaviour
             _speed = targetSpeed;
         }
 
-        Vector3 inputDirection = new Vector3(_playerInputs.Move.x, 0.0f, _playerInputs.Move.y).normalized;
+        Vector3 inputDirection = new Vector3(_playerInputs.GetMove().x, 0.0f, _playerInputs.GetMove().y).normalized;
 
-        if (_playerInputs.Move != Vector2.zero)
+        if (_playerInputs.GetMove() != Vector2.zero)
         {
-            inputDirection = transform.right * _playerInputs.Move.x + transform.forward * _playerInputs.Move.y;
+            inputDirection = transform.right * _playerInputs.GetMove().x + transform.forward * _playerInputs.GetMove().y;
         }
 
         _characterController.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
@@ -98,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
                 _verticalVelocity = -2f;
             }
 
-            if (_playerInputs.Jump && _jumpTimeoutDelta <= 0.0f)
+            if (_playerInputs.IsJumping() && _jumpTimeoutDelta <= 0.0f)
             {
                 _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
             }
@@ -116,8 +118,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 _fallTimeoutDelta -= Time.deltaTime;
             }
-
-            _playerInputs.Jump = false;
         }
 
         if (_verticalVelocity < _terminalVelocity)
