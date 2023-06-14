@@ -17,7 +17,7 @@ public class PhysicsPickup : MonoBehaviour
 
         if (playerInputs.IsPickup())
         {
-            Collider[] collider = Physics.OverlapSphere(gameObject.transform.position, radius, PickupMask);
+            Collider[] collider = Physics.OverlapSphere(gameObject.transform.position, radius, PickupMask);            
 
             foreach (var item in collider)
             {
@@ -30,7 +30,11 @@ public class PhysicsPickup : MonoBehaviour
                 currentRigidbody.isKinematic = true;
                 currentCollider.enabled = false;
             }
-        }
+
+            if(!currentRigidbody)
+                playerInputs.ChangePickupStatus();            
+        }        
+                
 
         if (currentRigidbody && !playerInputs.IsPickup())
         {
