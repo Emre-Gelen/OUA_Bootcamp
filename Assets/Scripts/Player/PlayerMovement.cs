@@ -103,14 +103,18 @@ public class PlayerMovement : MonoBehaviour
         float targetSpeed = _playerInputs.IsSprinting() ? SprintSpeed : MoveSpeed;
 
         if (_playerInputs.GetMove() == Vector2.zero) targetSpeed = 0.0f;
-        float currentHorizontalSpeed = new Vector3(_characterController.velocity.x, 0.0f, _characterController.velocity.z).magnitude;
+
+        float currentHorizontalSpeed = new Vector3(transform.InverseTransformDirection(_characterController.velocity).x, 0.0f, transform.InverseTransformDirection(_characterController.velocity).z).magnitude;
 
         float speedOffset = 0.1f;
         float inputMagnitude = _playerInputs.analogMovement ? _playerInputs.GetMove().magnitude : 1f;
 
         if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
         {
-            _speed = Mathf.Round(Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate) * 1000f) / 1000f;
+            _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
+                    Time.deltaTime * SpeedChangeRate);
+
+            _speed = Mathf.Round(_speed * 1000f) / 1000f;
         }
         else
         {
