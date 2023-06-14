@@ -8,7 +8,8 @@ using UnityEngine.Windows;
 [RequireComponent(typeof(PlayerInputs))]
 public class PlayerMovement : MonoBehaviour
 {
-    public float MoveSpeed = 3.0f;
+    public float MoveSpeed = 2.0f;
+    public float CarryingMoveSpeed = 1.2f;
     public float SprintSpeed = 5.0f;
     public float SpeedChangeRate = 10.0f;
 
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private int _animIDJump;
     private int _animIDFreeFall;
     private int _animIDMotionSpeed;
+    private int _animIDIsCarrying;
 
     private float _speed;
     private float _animationBlend;
@@ -88,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         _animIDJump = Animator.StringToHash("Jump");
         _animIDFreeFall = Animator.StringToHash("Falling");
         _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+        _animIDIsCarrying = Animator.StringToHash("IsCarrying");
     }
 
     private void GroundedCheck()
@@ -100,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float targetSpeed = _playerInputs.IsSprinting() ? SprintSpeed : MoveSpeed;
+        float targetSpeed = _playerInputs.IsPickup() ? CarryingMoveSpeed : (_playerInputs.IsSprinting() ? SprintSpeed : MoveSpeed);
 
         if (_playerInputs.GetMove() == Vector2.zero) targetSpeed = 0.0f;
 
@@ -142,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
 
         _characterAnimator.SetFloat(_animIDSpeed, _animationBlend);
         _characterAnimator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+        _characterAnimator.SetBool(_animIDIsCarrying, _playerInputs.IsPickup());
     }
 
     private void JumpAndGravity()
