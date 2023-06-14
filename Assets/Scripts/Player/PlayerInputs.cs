@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class PlayerInputs : MonoBehaviour
     private Vector2 _move;
     private bool _jump;
     private bool _sprint;
+    private bool _pickup;
 
     public bool analogMovement;
 
@@ -16,6 +18,7 @@ public class PlayerInputs : MonoBehaviour
     public bool IsJumping() => _jump;
     public bool IsSprinting() => _sprint;
     public Vector2 GetMove() => _move;
+    public bool IsPickup() => _pickup;
 
 #if ENABLE_INPUT_SYSTEM
     public void OnMove(InputAction.CallbackContext value)
@@ -32,6 +35,13 @@ public class PlayerInputs : MonoBehaviour
     {
         SprintInput(value.action.ReadValue<float>() == 1);
     }
+
+    public void OnPickup(InputAction.CallbackContext value)
+    {            
+        if(value.performed)
+            PickupInput();  
+    }
+
 #endif
 
 
@@ -58,5 +68,10 @@ public class PlayerInputs : MonoBehaviour
     private void SetCursorState(bool newState)
     {
         Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+    }
+    
+    private void PickupInput()
+    {
+        _pickup = !_pickup;
     }
 }
