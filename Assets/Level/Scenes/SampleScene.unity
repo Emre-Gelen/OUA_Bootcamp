@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -238,6 +238,12 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!4 &499610059 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5356103944566866079, guid: 14f775dbf4f38455d8ebfc4a8addfd8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4426196953834894502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,17 +308,17 @@ PrefabInstance:
     - target: {fileID: 612452803204958667, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5537243
+      value: 1.8938465
       objectReference: {fileID: 0}
     - target: {fileID: 612452803204958667, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.500001
+      value: 8.957001
       objectReference: {fileID: 0}
     - target: {fileID: 612452803204958667, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.7437239
+      value: -10.680483
       objectReference: {fileID: 0}
     - target: {fileID: 612452803204958667, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
         type: 3}
@@ -354,26 +360,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IsometricCam
       objectReference: {fileID: 0}
-    - target: {fileID: 7557625044005774052, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557625044005774052, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557625044005774052, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7557625044005774053, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1870920689}
+      objectReference: {fileID: 499610059}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1, type: 3}
 --- !u!1 &1529129886
@@ -474,12 +465,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1870920689 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3385655799947437593, guid: da8162455ebae4ece9de29345612bfba,
-    type: 3}
-  m_PrefabInstance: {fileID: 3385655800741344918}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2002370410953006606
 PrefabInstance:
   m_ObjectHideFlags: 0
