@@ -39,7 +39,7 @@ public class PlayerInputs : MonoBehaviour
     public void OnPickup(InputAction.CallbackContext value)
     {            
         if(value.performed)
-            PickupInput();  
+            ChangePickupStatus();  
     }
 
 #endif
@@ -70,7 +70,7 @@ public class PlayerInputs : MonoBehaviour
         Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
     }
     
-    private void PickupInput()
+    public void ChangePickupStatus()
     {
         _pickup = !_pickup;
     }
