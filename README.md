@@ -33,14 +33,20 @@
 
 <details>
 <summary><b><font size = "+1">Sprint 1</font></b></summary>
-</details>
-
 
 <details>
-<summary><b><font size = "+1">Sprint 2</font></b></summary>
+<summary><b>Sprint Review</b></summary>
+
+Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard oluşturulması, karakterin temel hareketlerinin implemente edilmesi ve butonlara bağlı kapı mekaniğinin implemente edilmesi görevleri tamamlanmıştır.  
 </details>
 
+<br/>
 
 <details>
-<summary><b><font size = "+1">Sprint 3</font></b></summary>
+<summary><b>Sprint Retrospective</b></summary>
+
+* Ekip içerisindeki enerji ve birbirine uyum harika.
+* Toplantıya katılım sağlayamayan ekip üyeleri için toplantı notlarının alınması ve toplantıda konuşulan önemli noktaların özet geçilmesi.
+
+</details>
 </details>
