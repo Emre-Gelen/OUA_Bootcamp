@@ -34,13 +34,26 @@
 <details>
 <summary><b><font size = "+1">Sprint 1</font></b></summary>
 
+<br/>
+
+<details>
+<summary><b>Sprint Board</b></summary>
+  
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/update-readme/Project%20Management/SprintSS/TrelloBoardSprint1.png)
+</details>
+
+<details>
+<summary><b>Oyun Durumu</b></summary>
+
+</details>
+
 <details>
 <summary><b>Sprint Review</b></summary>
 
 Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard oluşturulması, karakterin temel hareketlerinin implemente edilmesi ve butonlara bağlı kapı mekaniğinin implemente edilmesi görevleri tamamlanmıştır.  
 </details>
 
-<br/>
+
 
 <details>
 <summary><b>Sprint Retrospective</b></summary>
