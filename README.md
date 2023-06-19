@@ -35,6 +35,8 @@
 <details>
 <summary><b><font size = "+1">Sprint 1</font></b></summary>
 
+* Sprint içinde tamamlanması tahmin edilen puan: 48 Puan
+* Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 185 puanlık backlog bulunmaktadır. Daha yapılışına karar veremediğimiz özellikler olduğu için backlog kısmına eklemeler olacaktır. İlk sprint içerisinde zamanımızın büyük bir kısmını oyun fikrini konuşma ve planlamaya ayırdığımız için kolay görünen görevlerle başlamak istedik. 
 <br/>
 
 <details>
@@ -55,7 +57,7 @@
 <details>
 <summary><b>Sprint Review</b></summary>
 
-Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard oluşturulması, karakterin temel hareketlerinin implemente edilmesi ve butonlara bağlı kapı mekaniğinin implemente edilmesi görevleri tamamlanmıştır.  
+Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard oluşturulması, karakterin temel hareketlerinin implemente edilmesi ve butonlara bağlı kapı mekaniğinin implemente edilmesi görevleri tamamlanmıştır. Planladığımız 48 puanlık görevden 43 puanlık görevi tamamladık.  
 </details>
 
 
