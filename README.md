@@ -37,7 +37,8 @@
 
 * Sprint içinde tamamlanması tahmin edilen puan: 48 Puan
 * Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 185 puanlık backlog bulunmaktadır. Daha yapılışına karar veremediğimiz özellikler olduğu için backlog kısmına eklemeler olacaktır. İlk sprint içerisinde zamanımızın büyük bir kısmını oyun fikrini konuşma ve planlamaya ayırdığımız için kolay görünen görevlerle başlamak istedik.
-* Daily Scrum: Bizim için daha rahat olduğu için telegram üzerinden haberleşmeyi tercih ettik. Bunun yanında bazen discord üzerinden sesli olarak toplantı yaptık. 
+* Daily Scrum: Bizim için daha rahat olduğu için telegram üzerinden haberleşmeyi tercih ettik. Bunun yanında bazen discord üzerinden sesli olarak toplantı yaptık.
+* Sprint Notları: Oyun içerisinde olacak tuzaklara ek yapılacaktır. Şu an backlog içerisinde her birine ait bir task bulunmamaktadır. Kendisine ait bir task olmayan tuzak fikirleri Tuzak Fikirleri task'ının altında bulunmaktadır.
 [Chat](http://htmlpreview.github.io/?https://github.com/Emre-Gelen/OUA_Bootcamp/blob/update-readme/Project%20Management/Chat/messages.html)
 
 <br/>
