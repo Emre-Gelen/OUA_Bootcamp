@@ -44,6 +44,10 @@
 
 <details>
 <summary><b>Oyun Durumu</b></summary>
+  
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay1.gif)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay2.gif)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay3.gif)
 
 </details>
 
