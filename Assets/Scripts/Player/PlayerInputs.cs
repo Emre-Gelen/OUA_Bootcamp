@@ -10,6 +10,7 @@ public class PlayerInputs : MonoBehaviour
     private bool _jump;
     private bool _sprint;
     private bool _pickup;
+    private bool _canPush;
 
     public bool analogMovement;
 
@@ -19,6 +20,7 @@ public class PlayerInputs : MonoBehaviour
     public bool IsSprinting() => _sprint;
     public Vector2 GetMove() => _move;
     public bool IsPickup() => _pickup;
+    public bool CanPush()=> _canPush;
 
 #if ENABLE_INPUT_SYSTEM
     public void OnMove(InputAction.CallbackContext value)
@@ -40,6 +42,11 @@ public class PlayerInputs : MonoBehaviour
     {            
         if(value.performed)
             ChangePickupStatus();  
+    }
+
+    public void OnPush(InputAction.CallbackContext value)
+    {
+        ChangePushStatus();
     }
 
 #endif
@@ -73,5 +80,10 @@ public class PlayerInputs : MonoBehaviour
     public void ChangePickupStatus()
     {
         _pickup = !_pickup;
+    }
+
+    public void ChangePushStatus()
+    {
+        _canPush = !_canPush;
     }
 }
