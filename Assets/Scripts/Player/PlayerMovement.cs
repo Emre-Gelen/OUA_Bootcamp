@@ -108,7 +108,6 @@ public class PlayerMovement : MonoBehaviour
         if (_playerInputs.GetMove() == Vector2.zero) targetSpeed = 0.0f;
 
         float currentHorizontalSpeed = new Vector3(transform.InverseTransformDirection(_characterController.velocity).x, 0.0f, transform.InverseTransformDirection(_characterController.velocity).z).magnitude;
-
         float speedOffset = 0.1f;
         float inputMagnitude = _playerInputs.analogMovement ? _playerInputs.GetMove().magnitude : 1f;
 
@@ -127,20 +126,22 @@ public class PlayerMovement : MonoBehaviour
         _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
         if (_animationBlend < 0.01f) _animationBlend = 0f;
 
-        Vector3 inputDirection = new Vector3(_playerInputs.GetMove().x, 0.0f, _playerInputs.GetMove().y).normalized;
-
         if (_playerInputs.GetMove() != Vector2.zero)
         {
+            Vector3 inputDirection = _playerInputs.GetPushPull() ? Vector3.Scale(_playerInputs.GetMovementAxis(), new Vector3(_playerInputs.GetMove().y, 0.0f, _playerInputs.GetMove().y)) : new Vector3(_playerInputs.GetMove().x, 0.0f, _playerInputs.GetMove().y).normalized;
+
+            Debug.Log(inputDirection);
+
             _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
                                   _mainCamera.transform.eulerAngles.y;
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
                 RotationSmoothTime);
 
-            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+            if (!_playerInputs.GetPushPull())
+                transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
         }
 
         Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-
         _characterController.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
         _characterAnimator.SetFloat(_animIDSpeed, _animationBlend);
