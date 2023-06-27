@@ -33,12 +33,6 @@ public class ObjectPush : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
     }
 
-    private void Start()
-    {
-        _playerInputs = GetComponent<PlayerInputs>();
-        _characterController = GetComponent<CharacterController>();
-    }
-
     private void Update()
     {
         Vector3 direction = transform.forward.normalized;
