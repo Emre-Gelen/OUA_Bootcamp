@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class MovableMediumWeightBox : Movable
 {
-}
 
+}

@@ -1,41 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine.Utility;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectPush : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    [SerializeField] private float pushForce; 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-=======
     public float PullingPushingMoveSpeed = 1.3f;
     public float pushDistance = 0.6f;
 
     [SerializeField] private float pushForce;
 
     private Movable _lastMovableObject;
+
     private Transform _lastMovableObjectParent;
     private PlayerInputs _playerInputs;
     private CharacterController _characterController;
     private GameObject _mainCamera;
 
     private void Awake()
->>>>>>> Stashed changes
     {
-        Rigidbody rigidbody = hit.collider.attachedRigidbody;
-
-        if (rigidbody is not null)
+        if (_mainCamera == null)
         {
-            Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
-            forceDirection.y = 0;
-            forceDirection.Normalize();
-
-            rigidbody.AddForceAtPosition(forceDirection * pushForce, transform.position,ForceMode.Impulse);
+            _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         }
     }
-<<<<<<< Updated upstream
-=======
+
+    private void Start()
+    {
+        _playerInputs = GetComponent<PlayerInputs>();
+        _characterController = GetComponent<CharacterController>();
+    }
 
     private void Start()
     {
@@ -111,5 +107,4 @@ public class ObjectPush : MonoBehaviour
             }
         }
     }
->>>>>>> Stashed changes
 }
