@@ -55,9 +55,5 @@ public class PuzzleManager : MonoBehaviour
         GameObject puzzlePiece = Instantiate(_puzzlePart, new Vector3(_puzzleArea.position.x - ((_rowCount / 2 - row) * _puzzlePartGap), .5f, _puzzleArea.position.z - ((_columnCount / 2 - column) * _puzzlePartGap)), _puzzleArea.rotation);
         puzzlePiece.transform.parent = _puzzleArea;
         puzzlePiece.GetComponent<PuzzlePiece>().SetRightPlace(rightPlace);
-
-        Material material = new Material(Shader.Find("Standart"));
-        Texture texture = new Texture2D(2,2);
-        
     }
 }
