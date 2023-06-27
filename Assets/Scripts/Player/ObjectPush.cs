@@ -13,6 +13,8 @@ public class ObjectPush : MonoBehaviour
     [SerializeField] private float pushForce;
 
     private Movable _lastMovableObject;
+
+    private Transform _lastMovableObjectParent;
     private PlayerInputs _playerInputs;
     private CharacterController _characterController;
     private GameObject _mainCamera;
@@ -31,6 +33,12 @@ public class ObjectPush : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
     }
 
+    private void Start()
+    {
+        _playerInputs = GetComponent<PlayerInputs>();
+        _characterController = GetComponent<CharacterController>();
+    }
+
     private void Update()
     {
         Vector3 direction = transform.forward.normalized;
@@ -41,26 +49,19 @@ public class ObjectPush : MonoBehaviour
         {
             _lastMovableObject = hit.collider.GetComponent<Movable>();
 
-            foreach (GrabPoint grabPoint in _lastMovableObject.GetComponentsInChildren<GrabPoint>())
-            {
-                if (_closestGrabPoint == default || Vector3.Distance(transform.position, _closestGrabPoint.transform.position) > Vector3.Distance(transform.position, grabPoint.transform.position))
-                {
-                    _closestGrabPoint = grabPoint;
-                }
-            }
+            GetClosestGrabPoint(ref _closestGrabPoint);
 
             if((_closestGrabPoint.transform.position - transform.position).magnitude > .2f) MoveToClosestGrabPoint(_closestGrabPoint.transform.position);
             else
             {
                 _playerInputs.SetAxis(_closestGrabPoint.ImpactToMovement);
+                _lastMovableObjectParent = _lastMovableObjectParent ?? _lastMovableObject.transform.parent;
                 HandleForce(_lastMovableObject);
             }
         }
         else
         {
-            _lastMovableObject?.transform.SetParent(null);
-            _lastMovableObject = null;
-            _playerInputs.SetPullPushState(false);
+            HandleLeave();
         }
     }
     
@@ -80,5 +81,30 @@ public class ObjectPush : MonoBehaviour
     private void HandleForce(Movable movableObject)
     {
         movableObject.transform.SetParent(transform);
+        movableObject.IsHeld = true;
+    }
+
+    private void HandleLeave()
+    {
+        if (_lastMovableObject != null)
+        {
+            _lastMovableObject.transform.SetParent(_lastMovableObjectParent != transform ? _lastMovableObjectParent : null);
+            _lastMovableObject.IsHeld = false;
+            _lastMovableObject = null;
+        }
+
+        _lastMovableObjectParent = null;
+        _playerInputs.SetPullPushState(false);
+    }
+
+    private void GetClosestGrabPoint(ref GrabPoint closestGrabPoint )
+    {
+        foreach (GrabPoint grabPoint in _lastMovableObject.GetComponentsInChildren<GrabPoint>())
+        {
+            if (closestGrabPoint == default || Vector3.Distance(transform.position, closestGrabPoint.transform.position) > Vector3.Distance(transform.position, grabPoint.transform.position))
+            {
+                closestGrabPoint = grabPoint;
+            }
+        }
     }
 }

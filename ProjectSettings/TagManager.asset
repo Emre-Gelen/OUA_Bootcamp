@@ -8,6 +8,7 @@ TagManager:
   - BlueKey
   - SOCKET
   - PushableAndPullable
+  - PuzzlePiece
   layers:
   - Default
   - TransparentFX

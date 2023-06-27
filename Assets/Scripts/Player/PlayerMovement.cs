@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float targetSpeed = _playerInputs.IsPickup() ? CarryingMoveSpeed : (_playerInputs.IsSprinting() ? SprintSpeed : MoveSpeed);
+        float targetSpeed = GetTargetSpeed();
 
         if (_playerInputs.GetMove() == Vector2.zero) targetSpeed = 0.0f;
 
@@ -128,9 +128,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (_playerInputs.GetMove() != Vector2.zero)
         {
-            Vector3 inputDirection = _playerInputs.GetPushPull() ? Vector3.Scale(_playerInputs.GetMovementAxis(), new Vector3(_playerInputs.GetMove().y, 0.0f, _playerInputs.GetMove().y)) : new Vector3(_playerInputs.GetMove().x, 0.0f, _playerInputs.GetMove().y).normalized;
-
-            Debug.Log(inputDirection);
+            Vector3 inputDirection = GetInputDirection();
 
             _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
                                   _mainCamera.transform.eulerAngles.y;
@@ -151,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpAndGravity()
     {
-        if (Grounded)
+        if (CheckCanJump())
         {
             _fallTimeoutDelta = FallTimeout;
 
@@ -194,5 +192,25 @@ public class PlayerMovement : MonoBehaviour
         {
             _verticalVelocity += Gravity * Time.deltaTime;
         }
+    }
+
+    private bool CheckCanJump()
+    {
+        return Grounded && !(_playerInputs.GetPushPull() || _playerInputs.IsPickup());
+    }
+
+    private float GetTargetSpeed()
+    {
+        return IsCarryingOrPulling() ? CarryingMoveSpeed : (_playerInputs.IsSprinting() ? SprintSpeed : MoveSpeed);
+    }
+
+    private Vector3 GetInputDirection()
+    {
+        return _playerInputs.GetPushPull() ? Vector3.Scale(_playerInputs.GetMovementAxis(), new Vector3(_playerInputs.GetMove().y, 0.0f, _playerInputs.GetMove().y)) : new Vector3(_playerInputs.GetMove().x, 0.0f, _playerInputs.GetMove().y).normalized;
+    }
+
+    private bool IsCarryingOrPulling()
+    {
+        return _playerInputs.IsPickup() || _playerInputs.GetPushPull();
     }
 }
