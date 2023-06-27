@@ -466,7 +466,7 @@ MonoBehaviour:
   _rowCount: 5
   _columnCount: 5
   _puzzlePartGap: 1.7
-  _image: {fileID: 2800000, guid: 62d16ac5224f1414e86c6bfd4180d8d1, type: 3}
+  _image: {fileID: 2800000, guid: ad415b485f2894f28b2d3c683bde8b3b, type: 3}
 --- !u!1001 &1056811321
 PrefabInstance:
   m_ObjectHideFlags: 0
