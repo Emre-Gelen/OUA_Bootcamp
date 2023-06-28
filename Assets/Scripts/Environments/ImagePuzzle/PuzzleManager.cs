@@ -42,6 +42,7 @@ public class PuzzleManager : MonoBehaviour
         {
             CheckPiecesPlaces = false;
             Debug.Log(CheckPieces());
+            //TODO: Add a door or something to open when the puzzle is done.
         }
     }
 
@@ -89,13 +90,13 @@ public class PuzzleManager : MonoBehaviour
 
     private void CreatePuzzlePartSpaces()
     {
-        for (int column = 0; column < _columnCount; column++)
+        for (int column = -1; column < _columnCount + 1; column++)
         {
-            for (int row = 0; row < _rowCount; row++)
+            for (int row = -1; row < _rowCount + 1; row++)
             {
                 GameObject puzzleSpace = Instantiate(_puzzleSpace, new Vector3(_puzzleArea.position.x - ((_rowCount / 2 - row) * _puzzlePartGap), .5f, _puzzleArea.position.z - ((_columnCount / 2 - column) * _puzzlePartGap)), _puzzleArea.rotation);
                 puzzleSpace.transform.parent = _puzzleArea;
-                CreatePuzzlePiece(puzzleSpace, row, column);
+                if (column > -1 && column < _columnCount && -1 < row && row < _rowCount) CreatePuzzlePiece(puzzleSpace, row, column);
             }
         }
     }
