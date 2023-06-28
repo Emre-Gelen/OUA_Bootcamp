@@ -457,14 +457,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4606260da7e6b49e0996e4f16d6b0ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CheckPiecesPlaces: 0
   _puzzlePart: {fileID: 7688882133494010490, guid: f9d2b97f1bad048d1bb7c1cb5d74d22b,
     type: 3}
   _puzzleSpace: {fileID: 2841997749107051819, guid: 1b34f19eb495d41ada98c8ba2d88c764,
     type: 3}
   _puzzleArea: {fileID: 484306756}
   _puzzleCreatingAnimation: {fileID: 0}
-  _rowCount: 5
-  _columnCount: 5
+  _rowCount: 2
+  _columnCount: 2
   _puzzlePartGap: 1.7
   _image: {fileID: 2800000, guid: ad415b485f2894f28b2d3c683bde8b3b, type: 3}
 --- !u!1001 &1056811321
