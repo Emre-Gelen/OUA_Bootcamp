@@ -7,9 +7,12 @@ public class PuzzlePiece : Movable
 
     [SerializeField] private GameObject _rightPlace;
     [SerializeField] private float _threshold = .4f;
-    private void FixedUpdate()
+
+    private void Update()
     {
-        IsOnRightPlace = Vector3.Distance(transform.position, _rightPlace.transform.position) < _threshold;
+        bool newValue = Vector3.Distance(transform.position, _rightPlace.transform.position) < _threshold;
+        if (!IsOnRightPlace && newValue) PuzzleManager.instance.CheckPiecesPlaces = true;
+        IsOnRightPlace = newValue;
     }
 
     public void SetRightPlace(GameObject RightPlace)
