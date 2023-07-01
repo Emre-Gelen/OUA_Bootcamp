@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ArrowTrigger : MonoBehaviour
 {
-    [SerializeField] private List<ITriggerable> _triggerableObjects;
+    [SerializeField, SerializeReference] private List<BaseTriggerable> _triggerableObjects;
 
     private void OnTriggerEnter(Collider other)
     {
-        foreach (ITriggerable item in _triggerableObjects)
+        foreach (BaseTriggerable item in _triggerableObjects)
         {
             item.HandleTrigger(other);
         }
