@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowTrigger : MonoBehaviour
+public class Trigger : MonoBehaviour
 {
     [SerializeField, SerializeReference] private List<BaseTriggerable> _triggerableObjects;
 

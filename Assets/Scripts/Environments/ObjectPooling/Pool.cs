@@ -11,5 +11,6 @@ public class Pool
 
 public enum PoolType
 {
-    Arrow
+    Arrow,
+    Stone
 }
