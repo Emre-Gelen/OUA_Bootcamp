@@ -82,6 +82,7 @@ Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard
 * Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 201 puanlık backlog bulunmaktadır. İkinci sprint içerisinde tuzakları ve oynanışla ilgili konuları ele almak istedik ve buna göre görev seçimi yaptık. Tuzaklar kısmında yapmamız gerekenlerin çoğunu tamamladık.
 * Daily Scrum: Bizim için daha rahat olduğu için telegram üzerinden haberleşmeyi tercih ettik. Bunun yanında bazen discord üzerinden sesli olarak toplantı yaptık.
 * Sprint Notları: Oyun içerisinde olacak tuzaklara ek yapılacaktır. Şu an backlog içerisinde her birine ait bir task bulunmamaktadır. Kendisine ait bir task olmayan tuzak fikirleri Tuzak Fikirleri task'ının altında bulunmaktadır.
+[Chat](http://htmlpreview.github.io/?https://github.com/Emre-Gelen/OUA_Bootcamp/blob/update-readme/Project%20Management/Chat/messages.html)
 
 <br/>
 
