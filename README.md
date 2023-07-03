@@ -75,3 +75,41 @@ Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard
 </details>
 </details>
 
+<details>
+<summary><b><font size = "+1">Sprint 2</font></b></summary>
+
+* Sprint içinde tamamlanması tahmin edilen puan: 63 Puan
+* Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 201 puanlık backlog bulunmaktadır. İkinci sprint içerisinde tuzakları ve oynanışla ilgili konuları ele almak istedik ve buna göre görev seçimi yaptık. Tuzaklar kısmında yapmamız gerekenlerin çoğunu tamamladık.
+* Daily Scrum: Bizim için daha rahat olduğu için telegram üzerinden haberleşmeyi tercih ettik. Bunun yanında bazen discord üzerinden sesli olarak toplantı yaptık.
+* Sprint Notları: Oyun içerisinde olacak tuzaklara ek yapılacaktır. Şu an backlog içerisinde her birine ait bir task bulunmamaktadır. Kendisine ait bir task olmayan tuzak fikirleri Tuzak Fikirleri task'ının altında bulunmaktadır.
+
+<br/>
+
+<details>
+<summary><b>Sprint Board</b></summary>
+  
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/update-readme/Project%20Management/SprintSS/TrelloBoardSprint2.png)
+</details>
+
+
+<details>
+<summary><b>Oyun Durumu</b></summary>
+  
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay4.gif)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay5.gif)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay6.gif)
+
+</details>
+
+<details>
+<summary><b>Sprint Review</b></summary>
+
+Sprint içerisinde yapılması planlanan; oyun içerisindeki tuzaklar, oynanışla ilgili konular ve bazı nesnelerin modellenmesini içeren 63 puanlık görevden 34 puanlık görev tamamlanmıştır.
+</details>
+
+<details>
+<summary><b>Sprint Retrospective</b></summary>
+
+
+</details>
+</details>
