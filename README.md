@@ -111,6 +111,7 @@ Sprint içerisinde yapılması planlanan; oyun içerisindeki tuzaklar, oynanış
 <details>
 <summary><b>Sprint Retrospective</b></summary>
 
+* Sprint içerisinde belirlediğimiz puanın biraz altında kaldık. Bunun nedenleri ile ilgili ekipçe konuşmalıyız.
 
 </details>
 </details>
