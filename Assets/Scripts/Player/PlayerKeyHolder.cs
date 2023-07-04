@@ -11,6 +11,24 @@ public class PlayerKeyHolder : MonoBehaviour
     {
         KeyItems.Add(keyItem);
     }
+
+    public int CompareKeys(IEnumerable<KeyItem> keyItems)
+    {
+        int matchedKeys = 0;
+
+        foreach (KeyItem playerKey in KeyItems)
+        {
+            foreach (KeyItem requiredKey in keyItems)
+            {
+                if (playerKey == requiredKey)
+                {
+                    matchedKeys++;
+                }
+            }
+        }
+
+        return matchedKeys;
+    }
 }
 
 public enum KeyItem

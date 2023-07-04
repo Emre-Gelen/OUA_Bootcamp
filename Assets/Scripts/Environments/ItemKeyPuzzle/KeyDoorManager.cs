@@ -33,21 +33,10 @@ public class KeyDoorManager : MonoBehaviour
     public void CheckPlayerKeys(Collider collider)
     {
         GameObject collidingObject = collider.gameObject;
-
+        
         if (collidingObject.CompareTag("Player"))
         {
-            List<KeyItem> playerKeys = collidingObject.GetComponent<PlayerKeyHolder>().KeyItems;
-            int matchedKeys = 0;
-            foreach (KeyItem playerKey in playerKeys)
-            {
-                foreach (KeyItem requiredKey in requiredKeys)
-                {
-                    if (playerKey == requiredKey)
-                    {
-                        matchedKeys++;
-                    }
-                }
-            }
+            int matchedKeys = collidingObject.GetComponent<PlayerKeyHolder>().CompareKeys(requiredKeys);
             if (matchedKeys >= requiredKeys.Count)
                 unlocked = true;
         }
