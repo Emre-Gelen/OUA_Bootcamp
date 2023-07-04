@@ -7,15 +7,9 @@ public class PlayerKeyHolder : MonoBehaviour
 
     [SerializeField] public List<KeyItem> KeyItems;
 
-    void Start()
+    public void GiveKey(KeyItem keyItem)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        KeyItems.Add(keyItem);
     }
 }
 

@@ -28,12 +28,14 @@ public class KeyDoorManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("a");
-        GameObject collidingObject = collision.gameObject;
+    }
+
+    public void CheckPlayerKeys(Collider collider)
+    {
+        GameObject collidingObject = collider.gameObject;
 
         if (collidingObject.CompareTag("Player"))
         {
-            Debug.Log("b");
             List<KeyItem> playerKeys = collidingObject.GetComponent<PlayerKeyHolder>().KeyItems;
             int matchedKeys = 0;
             foreach (KeyItem playerKey in playerKeys)

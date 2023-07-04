@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class KeyItemManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private KeyItem keyColor;
+
+    private void OnCollisionEnter(Collision collision)
     {
         
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject collidingObject = other.gameObject;
+
+        if (collidingObject.CompareTag("Player"))
+        {
+            collidingObject.GetComponent<PlayerKeyHolder>().GiveKey(keyColor);
+            this.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
