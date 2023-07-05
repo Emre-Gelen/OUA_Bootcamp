@@ -3,5 +3,6 @@ using UnityEngine;
 
 public abstract class BaseTriggerable : MonoBehaviour
 {
-    public abstract void HandleTrigger(Collider collider);
+    public abstract void HandleTriggerEnter(Collider collider);
+    public virtual void HandleTriggerExit(Collider collider) { }
 }

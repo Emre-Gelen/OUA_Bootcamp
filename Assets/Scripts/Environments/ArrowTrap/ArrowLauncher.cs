@@ -10,7 +10,7 @@ public class ArrowLauncher : BaseTriggerable
     [SerializeField] private int _triggerCount;
     private int _remainingTriggerCount;
 
-    public override void HandleTrigger(Collider collider)
+    public override void HandleTriggerEnter(Collider collider)
     {
         if (_remainingTriggerCount == 0 && collider.gameObject.GetComponent<IDamageable>() != null) LaunchArrow();
         else if(_remainingTriggerCount > 0)

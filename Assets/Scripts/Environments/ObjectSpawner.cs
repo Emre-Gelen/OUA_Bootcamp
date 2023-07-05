@@ -4,7 +4,7 @@ public class ObjectSpawner : BaseTriggerable
 {
     [SerializeField] private GameObject spawnObject;
 
-    public override void HandleTrigger(Collider collider)
+    public override void HandleTriggerEnter(Collider collider)
     {
         if (collider.gameObject.GetComponent<IDamageable>() != null) SpawnStone();
     }
