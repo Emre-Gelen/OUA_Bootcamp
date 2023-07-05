@@ -12,10 +12,4 @@ public class Stone : MonoBehaviour, IPoolable
     {
         if (other.gameObject.TryGetComponent(out IDamageable otherGO)) otherGO.OnDamage(_damage);
     }
-
-    //IEnumerator AddToPool()
-    //{
-    //    yield return new WaitForSeconds(5f);
-    //    ObjectPool.instance.AddObjectToPool(poolType, gameObject);
-    //}
 }
