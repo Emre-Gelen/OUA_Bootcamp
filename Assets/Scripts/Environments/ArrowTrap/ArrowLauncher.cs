@@ -10,12 +10,6 @@ public class ArrowLauncher : BaseTriggerable
     [SerializeField] private int _triggerCount;
     private int _remainingTriggerCount;
 
-    //TODO: Oklari object pooling mantigina uygun sekilde olustur. Eger sinirsiz ok kullanilacaksa da bir ust sinir belirle.
-    //Belki performans acisindan oklar ayri bir sinifin altinda toplanabilir ve arrowLauncher nesneleri oklari oradan ceker.
-
-    //TODO: Eger belli bir tetiklenmeden sonra calisacaksa her tetiklenmede kalan tetiklenme sayisi azaltilmali ve 0'a ulastiginda ok firlatilmali.
-    //Ok firlatildiktan sonra kalan tetiklenme sayisi resetlenmeli.
-
     public override void HandleTrigger(Collider collider)
     {
         if (_remainingTriggerCount == 0 && collider.gameObject.GetComponent<IDamageable>() != null) LaunchArrow();

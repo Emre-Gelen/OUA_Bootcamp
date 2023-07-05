@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 769053598300080977}
   - component: {fileID: 769053598300080976}
   m_Layer: 0
-  m_Name: StoneSpawner
+  m_Name: ObjectSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27a2f9608d6a41528a569d20dbdab72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnObject: {fileID: 2681372463576858910, guid: 3e12529c0346b4dc58e6d75e7a34d7cf,
+    type: 3}
