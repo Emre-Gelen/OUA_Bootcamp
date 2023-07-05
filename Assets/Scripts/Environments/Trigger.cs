@@ -10,7 +10,15 @@ public class Trigger : MonoBehaviour
     {
         foreach (BaseTriggerable item in _triggerableObjects)
         {
-            item.HandleTrigger(other);
+            item.HandleTriggerEnter(other);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        foreach (BaseTriggerable item in _triggerableObjects)
+        {
+            item.HandleTriggerExit(other);
         }
     }
 }
