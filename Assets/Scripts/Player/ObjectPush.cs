@@ -41,6 +41,7 @@ public class ObjectPush : MonoBehaviour
         GrabPoint _closestGrabPoint = default;
         if (Physics.Raycast(ray, out RaycastHit hit, pushDistance) && _playerInputs.GetPushPull())
         {
+            Debug.Log(hit.transform.gameObject.name);
             _lastMovableObject = hit.collider.GetComponent<Movable>();
 
             GetClosestGrabPoint(ref _closestGrabPoint);
