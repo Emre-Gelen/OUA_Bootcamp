@@ -29,6 +29,14 @@ public class PlayerKeyHolder : MonoBehaviour
 
         return matchedKeys;
     }
+
+    public void RemoveKeys(IEnumerable<KeyItem> keyItems)
+    {
+        foreach (KeyItem key in keyItems)
+        {
+            KeyItems.Remove(key);
+        }
+    }
 }
 
 public enum KeyItem

@@ -36,9 +36,13 @@ public class KeyDoorManager : MonoBehaviour
         
         if (collidingObject.CompareTag("Player"))
         {
-            int matchedKeys = collidingObject.GetComponent<PlayerKeyHolder>().CompareKeys(requiredKeys);
+            PlayerKeyHolder playerKeyHolder = collidingObject.GetComponent<PlayerKeyHolder>();
+            int matchedKeys = playerKeyHolder.CompareKeys(requiredKeys);
             if (matchedKeys >= requiredKeys.Count)
+            {
                 unlocked = true;
+                playerKeyHolder.RemoveKeys(requiredKeys);
+            }
         }
     }
 
