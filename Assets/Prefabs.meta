@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: ed1d650f4d6d8ec4a939f9a0224cf615
+<<<<<<<< Updated upstream:Assets/Prefabs.meta
+guid: 4cddfd008783f4adb826ca2116c1e7b7
+========
+guid: d07f28adcb70b4f08847be8ca136fdb0
+>>>>>>>> Stashed changes:Assets/Art/Textures/Character/Nathan.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
