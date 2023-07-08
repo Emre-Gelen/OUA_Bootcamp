@@ -8,9 +8,7 @@ using UnityEngine;
 public class ObjectPush : MonoBehaviour
 {
     public float PullingPushingMoveSpeed = 1.3f;
-    public float pushDistance = 0.6f;
-
-    [SerializeField] private float pushForce;
+    [SerializeField] private float pushDistance = 0.6f;
 
     private Movable _lastMovableObject;
 
