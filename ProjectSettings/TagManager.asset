@@ -9,6 +9,7 @@ TagManager:
   - SOCKET
   - PushableAndPullable
   - PuzzlePiece
+  - PressWall
   layers:
   - Default
   - TransparentFX
