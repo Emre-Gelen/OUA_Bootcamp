@@ -26,7 +26,7 @@ public class ArrowLauncher : BaseTriggerable
         GameObject arrow = ObjectPool.instance.GetObjectFromPool(PoolType.Arrow, transform.position, transform.rotation);
 
         if (arrow == null) return;
-        arrow.GetComponent<Rigidbody>().AddForce(Vector3.forward * _launcherForce, ForceMode.Impulse);
+        arrow.GetComponent<Rigidbody>().AddForce(transform.up * _launcherForce, ForceMode.Impulse);
 
         _remainingTriggerCount = _triggerCount;
         _arrowCount--;
