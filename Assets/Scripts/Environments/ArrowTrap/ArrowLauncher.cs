@@ -23,7 +23,7 @@ public class ArrowLauncher : BaseTriggerable
     {
         if (!_hasInfiniteArrow && _arrowCount == 0) return;
 
-        GameObject arrow = ObjectPool.instance.GetObjectFromPool(PoolType.Arrow, transform.position, transform.rotation);
+        GameObject arrow = ObjectPool.instance.GetObjectFromPool(PoolType.Arrow, transform.position, Quaternion.Euler(0, 90 + transform.rotation.eulerAngles.y, 90) * transform.rotation);
 
         if (arrow == null) return;
         arrow.GetComponent<Rigidbody>().AddForce(transform.up * _launcherForce, ForceMode.Impulse);

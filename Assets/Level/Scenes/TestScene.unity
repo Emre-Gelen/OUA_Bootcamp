@@ -2413,61 +2413,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 612452803204958668, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 612452803204958668, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: far clip plane
-      value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 612452803204958668, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 612452803204958668, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 612452803204958668, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 612452803204958670, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
         type: 3}
       propertyPath: m_Name
       value: IsometricCam
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557625044005774052, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557625044005774052, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557625044005774052, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7557625044005774053, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
         type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2093063481}
-    - target: {fileID: 7557625044005774053, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1,
-        type: 3}
-      propertyPath: m_Lens.FarClipPlane
-      value: 1500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd815fb7de806c44a9d0e6eb4d6e5e1, type: 3}
 --- !u!1001 &1002305524
