@@ -42,8 +42,7 @@ public class ObjectPush : MonoBehaviour
             _lastMovableObject = hit.collider.GetComponent<Movable>();
 
             GetClosestGrabPoint(ref _closestGrabPoint);
-
-            if((_closestGrabPoint.transform.position - transform.position).magnitude > .2f) MoveToClosestGrabPoint(_closestGrabPoint.transform.position);
+            if((_closestGrabPoint.transform.position - transform.position).magnitude > .25f) MoveToClosestGrabPoint(_closestGrabPoint.transform.position);
             else
             {
                 _playerInputs.SetAxis(_closestGrabPoint.ImpactToMovement);
