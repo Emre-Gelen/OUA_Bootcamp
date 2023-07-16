@@ -96,9 +96,9 @@ Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard
 <details>
 <summary><b>Oyun Durumu</b></summary>
   
-![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay4.gif)
-![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay5.gif)
-![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay6.gif)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS1.png)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS2.png)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS3.png)
 
 </details>
 
@@ -106,6 +106,48 @@ Sprint içerisinde yapılması planlanan; oyunun hikayesi ile beraber storyboard
 <summary><b>Sprint Review</b></summary>
 
 Sprint içerisinde yapılması planlanan; oyun içerisindeki tuzaklar, oynanışla ilgili konular ve bazı nesnelerin modellenmesini içeren 63 puanlık görevden 34 puanlık görev tamamlanmıştır.
+</details>
+
+<details>
+<summary><b>Sprint Retrospective</b></summary>
+
+* Sprint içerisinde belirlediğimiz puanın biraz altında kaldık. Bunun nedenleri ile ilgili ekipçe konuşmalıyız.
+
+</details>
+</details>
+
+<details>
+<summary><b><font size = "+1">Sprint 3</font></b></summary>
+
+* Sprint içinde tamamlanması tahmin edilen puan: 123 Puan
+* Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 245 puanlık backlog bulunmaktadır. Son sprint içerisinde artık level tasarımlarını ve de oyun içerisindeki tuzakları son haline getirmek için çabaladık.
+* Daily Scrum: Bizim için daha rahat olduğu için telegram üzerinden haberleşmeyi tercih ettik. Bunun yanında bazen discord üzerinden sesli olarak toplantı yaptık.
+* Sprint Notları: Level tasarımlarında ses kısmında gerekli eklemeleri yapamadık.
+
+[Chat](http://htmlpreview.github.io/?https://github.com/Emre-Gelen/OUA_Bootcamp/blob/update-readme/Project%20Management/Chat/messages.html)
+
+<br/>
+
+<details>
+<summary><b>Sprint Board</b></summary>
+  
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/update-readme/Project%20Management/SprintSS/TrelloBoardSprint3.png)
+</details>
+
+
+<details>
+<summary><b>Oyun Durumu</b></summary>
+  
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS1.png)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS2.png)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS3.png)
+
+</details>
+
+<details>
+<summary><b>Sprint Review</b></summary>
+
+Sprint içerisinde yapılması planlanan; çoğunlukla level tasarımları ile ilgili olan 123 puanlık görevden 97 puanlık görev tamamlanmıştır.
 </details>
 
 <details>
