@@ -14,20 +14,16 @@ public class KeyDoorManager : MonoBehaviour
     [SerializeField] private List<KeyItem> requiredKeys;
     [SerializeField] private bool unlocked;
 
-    private float localX;
+    private float localY;
 
     private void Awake()
     {
-        localX = gameObject.transform.localPosition.x;
+        localY = gameObject.transform.localPosition.y;
     }
 
     private void Update()
     {
         CheckKeyStatus();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
     }
 
     public void CheckPlayerKeys(Collider collider)
@@ -48,16 +44,16 @@ public class KeyDoorManager : MonoBehaviour
 
     private void CheckKeyStatus()
     {
-            if (unlocked == false)
+        if (unlocked == false)
+        {
+            if (gameObject.transform.localPosition.y != localY)
             {
-                if (gameObject.transform.localPosition.x != localX)
-                {
-                    gameObject.transform.DOLocalMoveX(localX, duration);
-                }
-
-                return;
+                gameObject.transform.DOLocalMoveY(localY, duration);
             }
 
-        gameObject.transform.DOLocalMoveX(doorDirection, duration);
+            return;
+        }
+
+        gameObject.transform.DOLocalMoveY(doorDirection, duration);
     }
 }

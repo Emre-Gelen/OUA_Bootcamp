@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] public float Health { get { return _health; } set { _health = value; } }
-    [SerializeField] private float _health = 100f;
+    [SerializeField] private float _health = 1f;
 
     public void OnDamage(float damage)
     {
@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private void HandleDie()
     {
         Debug.Log("Died");
+        Destroy(this.gameObject);
         //Die animation
         //Restart game
     }
