@@ -12,6 +12,7 @@ public class PuzzleManager : MonoBehaviour
     [Space(10)]
     [SerializeField] private Transform _puzzleArea;
     [SerializeField] private GameObject _puzzleCreatingAnimation;
+    [SerializeField] private GameObject _puzzleDoor;
 
     [Space(10)]
     [SerializeField] private int _rowCount;
@@ -33,7 +34,6 @@ public class PuzzleManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        CreatePuzzle();
     }
 
     private void Update()
@@ -41,8 +41,10 @@ public class PuzzleManager : MonoBehaviour
         if (CheckPiecesPlaces)
         {
             CheckPiecesPlaces = false;
-            Debug.Log(CheckPieces());
-            //TODO: Add a door or something to open when the puzzle is done.
+            if (_puzzleDoor.TryGetComponent<PuzzleDoor>(out PuzzleDoor puzzleDoor))
+            {
+                puzzleDoor.OnOpening();
+            }
         }
     }
 
@@ -66,7 +68,7 @@ public class PuzzleManager : MonoBehaviour
             }
         }
 
-        Shuffle(new System.Random(), _randomLocations);
+        //Shuffle(new System.Random(), _randomLocations);
     }
 
     private void Shuffle<T>(System.Random random, T[,] array)
