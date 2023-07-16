@@ -138,9 +138,9 @@ Sprint içerisinde yapılması planlanan; oyun içerisindeki tuzaklar, oynanış
 <details>
 <summary><b>Oyun Durumu</b></summary>
   
-![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay4.gif)
-![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay5.gif)
-![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/Gameplay6.gif)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS1.png)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS2.png)
+![](https://github.com/Emre-Gelen/OUA_Bootcamp/blob/main/Project%20Management/Game%20Videos/GameSS3.png)
 
 </details>
 
