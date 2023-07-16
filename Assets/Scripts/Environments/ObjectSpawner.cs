@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObjectSpawner : BaseTriggerable
 {
-    [SerializeField] private GameObject spawnObject;
+    [SerializeField] private PoolType _spawnObjectType;
 
     public override void HandleTriggerEnter(Collider collider)
     {
@@ -11,11 +11,8 @@ public class ObjectSpawner : BaseTriggerable
 
     private void SpawnStone()
     {
-        if (spawnObject.TryGetComponent(out IPoolable poolableObject))
-        {
-            GameObject stone = ObjectPool.instance.GetObjectFromPool(poolableObject.poolType, transform.position, transform.rotation);
+        GameObject stone = ObjectPool.instance.GetObjectFromPool(_spawnObjectType, transform.position, transform.rotation);
 
-            if (stone == null) return;
-        }
+        if (stone == null) return;
     }
 }
