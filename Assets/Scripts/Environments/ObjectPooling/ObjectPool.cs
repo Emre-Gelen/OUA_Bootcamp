@@ -32,7 +32,7 @@ public class ObjectPool : MonoBehaviour
 
             Array.ForEach(Enumerable.Range(0, pool.size).ToArray(), i =>
             {
-                GameObject createdObject = Instantiate(pool.prefab);
+                GameObject createdObject = Instantiate(pool.prefab, transform);
                 createdObject.SetActive(false);
                 objects.Enqueue(createdObject);
             });

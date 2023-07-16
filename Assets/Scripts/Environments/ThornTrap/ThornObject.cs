@@ -15,19 +15,26 @@ public class ThornObject : BaseTriggerable
     [Space]
     [SerializeField] private bool _isTimedTrigger;
     [SerializeField] private float _triggerAfterSeconds = 2.5f;
+    [SerializeField] private float _downAfterSeconds = 1f;
+
+    private bool _isOpen;
 
     private void Start()
     {
         if (_isTimedTrigger)
         {
-            TimedTrigger.CreateTimer(_triggerAfterSeconds, HandleTimedTrigger);
+            TimedTrigger.CreateTimer(_triggerAfterSeconds + _downAfterSeconds, HandleTimedTrigger);
         }   
     }
 
     private void HandleTimedTrigger()
     {
-        transform.DOLocalMoveY(_direction, _upTransitionDuration);
-        StartCoroutine(HandleMove(-_direction, _downTransitionDuration, 1f));
+        if (!_isOpen)
+        {
+            transform.DOLocalMoveY(_direction, _upTransitionDuration);
+            _isOpen = true;
+            StartCoroutine(HandleMove(-_direction, _downTransitionDuration, _downAfterSeconds));
+        }
     }
 
     public override void HandleTriggerEnter(Collider collider)
@@ -44,5 +51,6 @@ public class ThornObject : BaseTriggerable
     {
         yield return new WaitForSeconds(transitionDelay);
         transform.DOLocalMoveY(direction, duration);
+        _isOpen = !_isOpen;
     }
 }
