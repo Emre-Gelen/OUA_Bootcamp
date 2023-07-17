@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -8,9 +6,9 @@ public class PuzzleDoor : MonoBehaviour
     [SerializeField] private float _direction;
     [SerializeField] private float _duration;
 
-    private bool _isOpen;
+    private bool _isOpen = false;
 
-    public void OnOpening()
+    public void HandleOpen()
     {
         if (!_isOpen)
         {

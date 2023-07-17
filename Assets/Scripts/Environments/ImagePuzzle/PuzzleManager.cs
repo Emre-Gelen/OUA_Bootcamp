@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -38,12 +39,12 @@ public class PuzzleManager : MonoBehaviour
 
     private void Update()
     {
-        if (CheckPiecesPlaces)
+        if (CheckPieces())
         {
             CheckPiecesPlaces = false;
             if (_puzzleDoor.TryGetComponent<PuzzleDoor>(out PuzzleDoor puzzleDoor))
             {
-                puzzleDoor.OnOpening();
+                puzzleDoor.HandleOpen();
             }
         }
     }
@@ -68,7 +69,7 @@ public class PuzzleManager : MonoBehaviour
             }
         }
 
-        //Shuffle(new System.Random(), _randomLocations);
+        Shuffle(new System.Random(), _randomLocations);
     }
 
     private void Shuffle<T>(System.Random random, T[,] array)
@@ -119,6 +120,8 @@ public class PuzzleManager : MonoBehaviour
 
     private bool CheckPieces()
     {
-        return _puzzleArea.GetComponentsInChildren<PuzzlePiece>().All(puzzlePiece => puzzlePiece.IsOnRightPlace);
+        PuzzlePiece[] puzzlePieces = _puzzleArea.GetComponentsInChildren<PuzzlePiece>();
+        Debug.Log(puzzlePieces.Count());
+        return puzzlePieces.Length == _rowCount * _columnCount && puzzlePieces.All(puzzlePiece => puzzlePiece.IsOnRightPlace);
     }
 }
