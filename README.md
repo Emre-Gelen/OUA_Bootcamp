@@ -1,4 +1,4 @@
-# OUA_Bootcamp
+# Legacy of Shadows
 
 <details> 
 <summary><b><font size="+1">Ekip</font></b></summary>
